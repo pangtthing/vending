@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>자판기</title>
+	<style>
+		#vendingMachine {width:700px; margin:auto; margin-top:70px; margin-left: 120px}
+		#coin100 {width:50px; margin:auto; margin-top:50px; margin-left:250px;}
+		#coin500 {width:50px; margin:auto; margin-top:50px; margin-left:30px;}
+		#juice0 {width:200px;}
+	</style>
+</head>
+<body>
+	<div>
+		<img src="img/tokyo1.png" id="vendingMachine">
+		<img src="img/juice0.png" id="juice0">
+	</div>
+	<div>
+		<img src="img/coin100.png" id="coin100">
+		<img src="img/coin500.png" id="coin500">
+	</div>
+
+	<div>
+		<audio id=coinSound>
+			<source src="img/coinSound.mp3" type="audio/mpeg">
+		</audio>
+		<audio id=waterCanSound>
+			<source src="waterCanFall.mp3" type="audio/mpeg">
+		</audio>
+	</div>
+
+
+	<script type="text/javascript">
+
+		var toggle100 = "off";
+		coin100.onclick = function(){
+			if(toggle100=="off")
+			{vendingMachine.setAttribute("src","img/tokyo2.png");
+				toggle100="on";
+				coinSound.play();
+			}
+			else
+			{vendingMachine.setAttribute("src","img/tokyo1.png");
+				toggle100="off"
+			}
+		}
+
+		var toggle500 = "off";
+		coin500.onclick = function(){
+			if(toggle500=="off")
+			{vendingMachine.setAttribute("src","img/tokyo3.png");
+				toggle500="on";
+				coinSound.play();
+			}
+			else
+			{vendingMachine.setAttribute("src","img/tokyo1.png");
+				toggle500="off"
+			}
+		}
+
+		vendingMachine.onclick = function(){
+			juice0.setAttribute("src","img/juice1.png");
+				waterCanSound.play();
+		}
+
+	</script>
+
+</body>
+</html>
